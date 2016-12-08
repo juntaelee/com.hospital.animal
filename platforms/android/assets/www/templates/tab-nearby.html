@@ -1,0 +1,73 @@
+<!-- <ion-header-bar class="bar-hospital" align-title="center">
+    <h1 class="title"><i class="icon ion-ios-home">주변</i></h1>
+</ion-header-bar>
+<ion-header-bar align-title="center" class="bar bar-subheader hospital">
+    <h4 class="title">{{myLocation}}</h4>
+</ion-header-bar>
+ -->
+<ion-view>
+    <ion-nav-title>
+        <h1 class="title"><i class="icon ion-ios-home">주변</i></h1>
+    </ion-nav-title>
+
+    <ion-header-bar align-title="center" class="bar bar-subheader hospital bar-dark">
+        <h4 class="title">{{myLocation}}</h4>
+    </ion-header-bar>
+
+    <ion-content overflow-scroll="true">
+        <ion-refresher pulling-text="위치를 다시 조회합니다." spinner="ripple" on-refresh="doRefresh()">
+        </ion-refresher>
+        <!-- <div class="spinner {{ngHideSpinner}}">
+            <ion-spinner icon="ripple"></ion-spinner>
+        </div> -->
+
+        <ion-item class="item text-center {{ngNoneGPS}}">
+            <h2>위치조회 실패!</h2>
+            <i class="icon ion-arrow-down-c text">아래로 당겨서 다시 조회하세요.</i>
+        </ion-item>
+        
+        <!--<ion-list>-->
+            <div class="card" ng-repeat="item in items">
+                <div class="item item-avatar item-icon-right">
+                    <img ng-src="{{item.imageUrl}}">
+                    <h2 ng-bind-html="item.name"></h2>
+                    <p ng-bind="item.address"></p>
+                    <p>{{item.distance}}<span class="assertive">m</span></p>
+                    <div class="icon">
+                        <a class="" ng-class="item.bookmark ? 'ion-android-star' : 'ion-android-star-outline'" ng-click="setBookmark(item)"></a>
+                    </div>
+                </div>
+
+                <div class="item tabs tabs-icon-left">
+                    <a class="tab-item default-bg assertive" ng-href="tel: {{item.tel}}" style="font-size:11pt">
+                        <i class="ion-ios-telephone"></i>&nbsp;{{item.tel}}
+                    </a>
+                    <!--<a class="tab-item light-bg assertive" ng-click="setBookmark(item)">
+                        <i ng-class="item.bookmark ? 'ion-android-star' : 'ion-android-star-outline'"></i>
+                    </a>-->
+                    <a class="tab-item default-bg positive" href="#/tab/nearby/{{item.latitude}}/{{item.longitude}}" style="font-size:11pt">
+                        <i class="icon ion-map"></i>지도
+                    </a>
+                </div>
+            </div>
+
+            <!--<ion-item ng-repeat="item in items" item="item" class="item item-avatar item-icon-right" href="#/tab/nearby/{{item.latitude}}/{{item.longitude}}">
+                <img ng-src="{{item.imageUrl}}">
+
+                <h2 ng-bind-html="item.name"></h2>
+                <p ng-bind="item.address"></p>
+                <a class="ion-ios-telephone" ng-href="tel: {{item.tel}}">&nbsp;{{item.tel}}</a>
+                <div class="icon">
+                    <a class="" ng-class="item.bookmark ? 'ion-android-star' : 'ion-android-star-outline'" ng-click="setBookmark(item)"></a>&nbsp;
+                    &lt;!&ndash; <span ng-if="item.tel">
+                        <a ng-href="tel: {{item.tel}}" class="ion-ios-telephone"></a>
+                    </span> &ndash;&gt;
+                </div>
+            </ion-item>-->
+        <!--</ion-list>-->
+
+        <ion-item class="item text-center {{ngNoneMore}}" ng-click="getMorePlace()">
+            더 찾아보기<i class="icon ion-ios-more text-right"></i>
+        </ion-item>
+    </ion-content>
+</ion-view>

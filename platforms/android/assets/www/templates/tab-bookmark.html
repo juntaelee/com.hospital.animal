@@ -1,0 +1,81 @@
+<ion-nav-bar>
+</ion-nav-bar><ion-view>
+    <ion-nav-title>
+        <h1 class="title"><i class="icon ion-android-star">즐겨찾기</i></h1>
+        <ion-button class="button button-icon" ng-init="" ng-bind="edit?'완료':'편집'" ng-click="toggleEdit()"></ion-button>
+    </ion-nav-title>
+
+    <ion-content overflow-scroll="true">
+        <!--<ion-list show-delete="showDelete">
+        <div class="card" ng-repeat="item in items">
+            <ion-delete-button class="ion-minus-circled" ng-click="removeBookmark(item)"></ion-delete-button>
+            <div class="item item-avatar item-icon-right">
+
+
+                <img ng-src="{{item.imageUrl}}">
+                <h2 ng-bind-html="item.name"></h2>
+                <p ng-bind="item.address"></p>
+            </div>
+
+            <div class="item tabs tabs-icon-left">
+                <a class="tab-item default-bg assertive" ng-href="tel: {{item.tel}}" style="font-size:11pt">
+                    <i class="ion-ios-telephone"></i>&nbsp;{{item.tel}}
+                </a>
+                &lt;!&ndash;<a class="tab-item light-bg assertive" ng-click="setBookmark(item)">
+                    <i ng-class="item.bookmark ? 'ion-android-star' : 'ion-android-star-outline'"></i>
+                </a>&ndash;&gt;
+                <a class="tab-item default-bg positive" href="#/tab/bookmark/{{item.name}}/{{item.latitude}}/{{item.longitude}}" style="font-size:11pt">
+                    <i class="icon ion-map"></i>지도
+                </a>
+            </div>
+        </div>
+        </ion-list>-->
+
+        <ion-list show-delete="showDelete">
+            <!--<div class="card" ng-repeat="item in items">
+
+                <div class="item item-avatar item-icon-right">
+                    <img ng-src="{{item.imageUrl}}">
+                    <h2 ng-bind-html="item.name"></h2>
+                    <p ng-bind="item.address"></p>
+                </div>
+
+                <div class="item tabs tabs-icon-left">
+                    <a class="tab-item default-bg assertive" ng-href="tel: {{item.tel}}" style="font-size:11pt">
+                        <i class="ion-ios-telephone"></i>&nbsp;{{item.tel}}
+                    </a>
+
+                    <a class="tab-item default-bg positive" href="#/tab/bookmark/{{item.name}}/{{item.latitude}}/{{item.longitude}}" style="font-size:11pt">
+                        <i class="icon ion-map"></i>지도
+                    </a>
+                </div>
+            </div>-->
+            <div class="card" ng-repeat="item in items">
+                <ion-item class="item-avatar item-icon-right">
+                    <ion-delete-button class="ion-minus-circled" ng-click="removeBookmark(item)"></ion-delete-button>
+
+                    <img ng-src="{{item.imageUrl}}">
+
+                    <h2 ng-bind-html="item.name"></h2>
+                    <p ng-bind="item.address"></p>
+                    <!--<i class="ion-ios-telephone"></i>&nbsp;{{item.tel}}
+
+                    <div class="icon">
+                        <a class="button button-positive" ng-href="tel: {{item.tel}}">
+                            <i class="ion-ios-telephone-outline"></i>
+                        </a>
+                    </div>-->
+                </ion-item>
+                <div class="item tabs tabs-icon-left">
+                    <a class="tab-item default-bg assertive" ng-href="tel: {{item.tel}}" style="font-size:11pt">
+                        <i class="ion-ios-telephone"></i>&nbsp;{{item.tel}}
+                    </a>
+
+                    <a class="tab-item default-bg positive" href="#/tab/bookmark/{{item.name}}/{{item.latitude}}/{{item.longitude}}" style="font-size:11pt">
+                        <i class="icon ion-map"></i>지도
+                    </a>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>
