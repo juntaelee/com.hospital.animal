@@ -1,0 +1,102 @@
+/* Empty. Add your own CSS if you like */
+/* Common */
+.bar-hospital {
+    background-color: #FF6060;
+    border-color: #FF8000;
+    color: #fff;
+}
+.bar-hospital .title,
+.bar-hospital .button,
+.bar-hospital .ion-chevron-left {
+    color: #fff;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+.ion-ios-telephone {
+    color: #12c;
+    text-decoration: none;
+}
+/* nearby */
+.bar-subheader.hospital {
+    /*background-color: #d3d3d3;*/
+}
+.bar-subheader.hospital h4 {
+    /*color: #FFF;*/
+    font-size: 14px!important;
+}
+.icon a.ion-ios-telephone {
+    color: #FF4040;
+    text-decoration: none;
+}
+.icon a.ion-android-star {
+    color: #FF4040;
+}
+.spinner {
+    padding: 1.0em;
+    text-align: center;
+}
+/* bookmark */
+.bar-hospital .button.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #fff;
+    font-size: 17px;
+}
+/* Map */
+#map,
+#regionmap,
+#bookmarkmap {
+    width: 100%;
+    height: 100%;
+}
+.scroll {
+  height: 100%;
+}
+.ion-ios-navigate {
+    position:absolute;
+    bottom:5px;
+    right:5px;
+    /*padding:5px;
+    font-size:14px;
+    border: 1px solid #dbdbdb;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);*/
+    z-index:1;
+    cursor:pointer;
+}
+.marker.label {
+    background-color: #606060;
+    border-radius: 5px;
+    border: 1px solid #dbdbdb;
+    color: #fff;
+    padding: 1px 5px;
+    margin-bottom: 105px;
+}
+/* region */
+.list .item-province {
+    background-color: #fff;
+    border: 1px solid #908F92;
+    color: #908F92;
+    font-weight: bold;
+}
+.list .country {
+}
+.list .item-country {
+    background-color: #EF7E7E;
+    border: 1px solid #F3D8DB;
+    color: #fff;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+/*.country {
+    line-height: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.03s all linear;
+}
+.country.ng-hide {
+    line-height: 0px;
+}*/

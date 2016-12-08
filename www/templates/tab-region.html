@@ -1,0 +1,30 @@
+<ion-view>
+    <ion-nav-title>
+        <h1 class="title"><i class="icon ion-ios-location">지역</i></h1>
+    </ion-nav-title>
+
+    <ion-content overflow-scroll="true" delegate-handle="mainScroll">
+        <ion-list>
+            <div class="province">
+                <div ng-repeat="province in Provinces">
+                
+                    <ion-item id="anchor{{province.ID}}" class="item-province" ng-click="toggleProvinceGroup($event, province)">
+                        <i class="icon" ng-class="province.Show ? 'ion-ios-minus-outline' : 'ion-ios-plus-outline'"></i>
+                        &nbsp;{{province.Name}}
+                    </ion-item>
+
+                    <div class="country" ng-if="province.Show">
+                        <div ng-repeat="country in province.Countries">
+                        
+                            <ion-item class="item-country" ng-click="linkMap(province.Name, country.Name)">
+                                <i class="icon ion-navigate"></i>
+                                &nbsp;{{country.Name}}
+                            </ion-item>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

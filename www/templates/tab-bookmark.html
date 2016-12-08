@@ -1,0 +1,29 @@
+<ion-nav-bar>
+</ion-nav-bar><ion-view>
+    <ion-nav-title>
+        <h1 class="title"><i class="icon ion-android-star">즐겨찾기</i></h1>
+        <ion-button class="button button-icon" ng-init="" ng-bind="edit?'완료':'편집'" ng-click="toggleEdit()"></ion-button>
+    </ion-nav-title>
+
+    <ion-content overflow-scroll="true">
+        <ion-list show-delete="showDelete">
+            <ion-item ng-repeat="item in items" class="item-avatar item-icon-right" href="#/tab/bookmark/{{item.name}}/{{item.latitude}}/{{item.longitude}}">
+                <ion-delete-button class="ion-minus-circled" ng-click="removeBookmark(item)"></ion-delete-button>
+
+                <img ng-src="{{item.imageUrl}}">
+
+                <h2 ng-bind-html="item.name"></h2>
+                <p ng-bind="item.address"></p>
+                <i class="ion-ios-telephone"></i>&nbsp;{{item.tel}}
+                <!-- <a class="" ng-href="tel: {{item.tel}}">
+                    <i class="ion-ios-telephone"></i>
+                </a> -->
+                <div class="icon">
+                    <a class="button button-positive" ng-href="tel: {{item.tel}}">
+                        <i class="ion-ios-telephone-outline"></i>
+                    </a>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
